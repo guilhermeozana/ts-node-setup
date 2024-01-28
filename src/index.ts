@@ -1,1 +1,3 @@
-const message = "hello world!!";
+const teste = "hello world";
+
+teste.toString();

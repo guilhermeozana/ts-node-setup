@@ -4,7 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts"
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier src --write --ignore-unknown",
+    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
+    "prepare": "husky install"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "tabWidth": 2
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint"
+    ],
+    "*": [
+      "prettier --write"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -15,6 +31,8 @@
     "@typescript-eslint/parser": "^6.19.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
     "nodemon": "^3.0.3",
     "prettier": "^3.2.4",
     "ts-node": "^10.9.2",
