@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "format": "prettier src --write --ignore-unknown",
-    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
     "prepare": "husky install",
     "test": "jest --passWithNoTests",
     "test:watch": "yarn test --watch",
