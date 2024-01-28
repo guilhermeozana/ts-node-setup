@@ -8,7 +8,10 @@
     "lint:fix": "eslint src --ext .ts --fix",
     "format": "prettier src --write --ignore-unknown",
     "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest --passWithNoTests",
+    "test:watch": "yarn test --watch",
+    "test:staged": "yarn test --findRelatedTests"
   },
   "prettier": {
     "singleQuote": false,
@@ -18,7 +21,7 @@
     "*.ts": [
       "eslint"
     ],
-    "*": [
+    "src/*": [
       "prettier --write"
     ]
   },
@@ -26,15 +29,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^29.5.11",
     "@types/node": "^20.11.8",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^8.0.0",
+    "jest": "^29.7.0",
     "lint-staged": "^15.2.0",
     "nodemon": "^3.0.3",
     "prettier": "^3.2.4",
+    "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
