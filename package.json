@@ -19,7 +19,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "eslint"
+      "eslint",
+      "yarn test:staged"
     ],
     "src/*": [
       "prettier --write"

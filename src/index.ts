@@ -1,3 +1,7 @@
-const teste = "hello world";
+class Person {
+  sayMyName() {
+    return "Guilherme";
+  }
+}
 
-teste.toString();
+export default Person;
